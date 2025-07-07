@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="./imagens/favicon.png" type="image/png">
+    <title>William Furquim</title>
+</head>
+
+<body>
+    <header>
+        <img src="./imagens/logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li onclick="toggleSobreMim()">Sobre mim</li>
+                <li>Formação</li>
+                <li><a href="https://github.com/williamfurquim/Projetos-do-portfolio/blob/main/README.md" target="_blank">Projetos</a></li>
+            </ul>
+        </nav>
+        <button class="contato-profissional">Contato <br> profissional</button>
+    </header>
+
+    <main>
+        <div class="texts">
+            <h2>Programador</h2>
+            <h1>William<span class="william"> Furquim</span></h1>
+            
+            <div class="icons">
+                 <a href="https://www.instagram.com/williamfurquim_" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/seu_perfil" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="mailto:seuemail@example.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p>Sou um estudante de programação e desenvolvedor. Sempre gostei e estive por dentro da área da tecnologia e da inovação, hoje me especializo em criar soluções eficientes e intuitivas, transformando ideias em código funcional. <span class="veja-mais">Veja mais sobre o meu trabalho 👇</span></p>
+        </div>
+
+        <div class="image">
+            <img src="./imagens/eu.png" alt="William Furquim">
+        </div>
+    </main>
+
+    <div id="sobre-mim-popup" class="sobre-popup">
+        <div class="texto-sobre">
+            <h4>Sobre mim</h4>
+            <p>Como você já deve ter lido, me chamo <span class="sobre-mim">William</span>! Desde criança já gostava de mexer em computadores e tudo que tem a ver com tecnologia, de jogos até redes sociais. Aprendi muito sobre informática graças a isso mas até então não sabia o que era <span class="sobre-mim">programação</span>, muito menos tinha uma opinião formada a respeito.</p>            
+            <p class="p2">Iniciei um curso pelo Senai de <span class="sobre-mim">Auxiliar de Estatística</span>, programação era um dos conteúdos. Aprendi rápido, logo no começo tratei como se fosse algo razo e que não ocuparia espaço na minha vida, com o tempo comecei a gostar demais, vi que era bom e já instalei todos os programas necessários no meu computador de casa.</p>
+            <p class="p3">Cada vez me dedicando mais, evolui e aprendi bastante sobre algumas linguagens de programação, fiz projetos me saindo <span class="sobre-mim">muito bem</span>. Agora essa área virou parte da minha rotina e é algo que quero continuar por muito tempo.</p>
+            <p class="p4">Nos meus trabalhos, prezo pela organização, ajustar cada pequeno detalhe e deixar ótimo visualmente. Sou <span class="sobre-mim">perfeccionista e ambicioso</span>, sempre buscando o mais próximo do meu melhor.</p>
+        </div>
+    </div>
+
+    <section>
+        <h3>Meus maiores projetos</h3>
+        <div class="carrossel">
+            <button class="btn-prev">❮</button>
+
+                <div class="conteudo-carrossel">
+                    <img id="carrossel-img" src="./Projetos/proximity.png" alt="Proximity">
+                    <p id="carrossel-texto">Proximity, O aplicativo de comunicação da vizinhança! Compartilhamento de itens, alertas de segurança e eventos locais, tudo em tempo real!</p>
+                </div>
+
+            <button class="btn-next">❯</button>
+        </div>
+    </section>
+
+    <div class="conhecimentos">
+        <h3>Especialidades</h3>
+        <div class="blocos-container">
+            <div class="bloco">
+                <div class="imagem">
+                    <img src="./Conhecimentos/hcj.png" alt="HTML, CSS e JavaScript">
+                </div>
+                <p>Crio sites e aplicativos funcionais, bonitos e intuitivos — ninguém merece se perder num site mal feito.</p>
+            </div>
+
+            <div class="bloco">
+                <div class="imagem">
+                    <img src="./Conhecimentos/C++.png" alt="C++">
+                </div>
+                <p>Programação de máquinas e automações com Arduino, ESP32 e web servers. "Robôs não fazem café ainda, mas já ligam a cafeteira".</p>
+            </div>
+
+            <div class="bloco">
+                <div class="imagem">
+                    <img src="./Conhecimentos/C Sharp.png" alt="C Sharp">
+                </div>
+                <p>Desenvolvo programas que fazem o trabalho chato e deixam o seu dia mais leve (ou pelo menos menos repetitivo).</p>               
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © 2025 | William Furquim</p>
+    </footer>
+</body>
+<script>
+    
+    const imagens = [
+        { src: "./Projetos/proximity.png", texto: "Proximity, O aplicativo de comunicação da vizinhança! Compartilhamento de itens, alertas de segurança e eventos locais, tudo em tempo real!" },
+        { src: "./Projetos/jogo.png", texto: "Void Arena, apenas os fortes sobrevivem ao vazio! Escolhe entre classes e entre em um PvP 4x4, vence a equipe que eliminar todos os adversários." },
+        { src: "./Projetos/robótica.jpg", texto: "Projeto de robótica com ESP32, desenvolvimento de um web server para o controle manual e automático da máquina." }
+    ];
+
+    let indexAtual = 0;
+
+    const imgElement = document.getElementById("carrossel-img");
+    const textoElement = document.getElementById("carrossel-texto");
+
+    document.querySelector(".btn-prev").addEventListener("click", () => {
+        indexAtual = (indexAtual - 1 + imagens.length) % imagens.length;
+        atualizarCarrossel();
+    });
+
+    document.querySelector(".btn-next").addEventListener("click", () => {
+        indexAtual = (indexAtual + 1) % imagens.length;
+        atualizarCarrossel();
+    });
+
+    function atualizarCarrossel() {
+        imgElement.src = imagens[indexAtual].src;
+        textoElement.textContent = imagens[indexAtual].texto;
+    }
+
+    function toggleSobreMim() {
+    const popup = document.getElementById("sobre-mim-popup");
+
+    // Alterna a visibilidade com classe "visivel"
+    const estaVisivel = popup.classList.contains("visivel");
+
+    if (estaVisivel) {
+        popup.classList.remove("visivel");
+        document.removeEventListener("click", fecharSeClicarFora);
+    } else {
+        popup.classList.add("visivel");
+        document.addEventListener("click", fecharSeClicarFora);
+    }
+
+    function fecharSeClicarFora(event) {
+        const isClickInside = popup.contains(event.target) || event.target.innerText === "Sobre mim";
+
+        if (!isClickInside) {
+        popup.classList.remove("visivel");
+        document.removeEventListener("click", fecharSeClicarFora);
+        }
+    }
+    }
+</script>
+</html>
